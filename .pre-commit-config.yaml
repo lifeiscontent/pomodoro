@@ -16,3 +16,9 @@ repos:
         entry: io.elementary.vala-lint -c .vala-lint.ini
         language: system
         files: \.vala$
+      - id: ninja
+        name: ninja
+        description: This runs ninja
+        entry: bash -c 'current_dir=$PWD && cd build && ninja && cd $current_dir'
+        language: system
+        files: \.vala$
