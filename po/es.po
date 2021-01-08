@@ -1,0 +1,42 @@
+# Spanish translations for com.github.lifeiscontent.pomodoro package.
+# Copyright (C) 2021 THE com.github.lifeiscontent.pomodoro'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.lifeiscontent.pomodoro package.
+# Automatically generated, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.lifeiscontent.pomodoro\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-07 20:26-0800\n"
+"PO-Revision-Date: 2021-01-07 20:26-0800\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ASCII\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: data/application.desktop.in:3 data/application.appdata.xml.in:6
+msgid "Pomodoro"
+msgstr ""
+
+#: data/application.desktop.in:4
+msgid "Pomodoro App"
+msgstr ""
+
+#: data/application.desktop.in:5 data/application.appdata.xml.in:7
+msgid "Stay productive with the pomodoro technique"
+msgstr ""
+
+#: data/application.desktop.in:8
+msgid "application-default-icon"
+msgstr ""
+
+#: data/application.desktop.in:11
+msgid "Pomodoro;Productivity;"
+msgstr ""
+
+#: data/application.appdata.xml.in:9
+msgid "Stay productive with the pomodoro technique."
+msgstr ""
