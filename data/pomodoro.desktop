@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Pomodoro
+GenericName=Pomodoro App
+Comment=Stay productive with the pomodoro technique
+Categories=Utility;Education;
+Exec=com.github.lifeiscontent.pomodoro
+Icon=application-default-icon
+Terminal=false
+Type=Application
+Keywords=Pomodoro;Productivity;
