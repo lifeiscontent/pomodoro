@@ -2,32 +2,14 @@ project('com.github.lifeiscontent.pomodoro', 'vala', 'c')
 
 i18n = import('i18n')
 
-add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format (meson.project_name()), language:'c')
-
-executable(
-    meson.project_name(),
-    'src/Application.vala',
-    dependencies: [
-        dependency('gtk+-3.0')
+add_project_arguments([
+        '-DGETTEXT_PACKAGE="@0@"'.format (meson.project_name())
     ],
-    install: true
+    language:'c'
 )
 
-i18n.merge_file(
-    input: join_paths('data', 'application.desktop.in'),
-    output: meson.project_name() + '.desktop',
-    po_dir: join_paths(meson.source_root(), 'po'),
-    type: 'desktop',
-    install: true,
-    install_dir: join_paths(get_option('datadir'), 'applications')
-)
-
-i18n.merge_file(
-    input: join_paths('data', 'application.appdata.xml.in'),
-    output: meson.project_name() + '.appdata.xml',
-    po_dir: join_paths(meson.source_root(), 'po'),
-    install: true,
-    install_dir: join_paths(get_option('datadir'), 'metainfo')
-)
-
+subdir('src')
+subdir('data')
 subdir('po')
+
+meson.add_install_script('meson/post_install.py')

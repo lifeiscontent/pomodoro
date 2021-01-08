@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.lifeiscontent.pomodoro\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-07 20:26-0800\n"
+"POT-Creation-Date: 2021-01-07 22:03-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,26 +17,40 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/application.desktop.in:3 data/application.appdata.xml.in:6
+#: src/Application.vala:20
+msgid "Click me!"
+msgstr ""
+
+#: src/Application.vala:24
+msgid "Hello World!"
+msgstr ""
+
+#: data/com.github.lifeiscontent.pomodoro.appdata.xml.in:7
+#: data/com.github.lifeiscontent.pomodoro.desktop.in:3
 msgid "Pomodoro"
 msgstr ""
 
-#: data/application.desktop.in:4
-msgid "Pomodoro App"
-msgstr ""
-
-#: data/application.desktop.in:5 data/application.appdata.xml.in:7
+#: data/com.github.lifeiscontent.pomodoro.appdata.xml.in:8
+#: data/com.github.lifeiscontent.pomodoro.desktop.in:4
 msgid "Stay productive with the pomodoro technique"
 msgstr ""
 
-#: data/application.desktop.in:8
-msgid "application-default-icon"
-msgstr ""
-
-#: data/application.desktop.in:11
-msgid "Pomodoro;Productivity;"
-msgstr ""
-
-#: data/application.appdata.xml.in:9
+#: data/com.github.lifeiscontent.pomodoro.appdata.xml.in:10
 msgid "Stay productive with the pomodoro technique."
+msgstr ""
+
+#: data/com.github.lifeiscontent.pomodoro.appdata.xml.in:18
+msgid "Initial release"
+msgstr ""
+
+#: data/com.github.lifeiscontent.pomodoro.appdata.xml.in:60
+msgid "Aaron Reisman"
+msgstr ""
+
+#: data/com.github.lifeiscontent.pomodoro.desktop.in:7
+msgid "com.github.lifeiscontent.pomodoro"
+msgstr ""
+
+#: data/com.github.lifeiscontent.pomodoro.desktop.in:10
+msgid "pomodoro;productivity;"
 msgstr ""

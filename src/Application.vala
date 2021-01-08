@@ -12,16 +12,23 @@ public class MyApp : Gtk.Application {
             default_width = 300,
             title = "Hello World"
         };
-        var button_hello = new Gtk.Button.with_label ("Click me!") {
-            margin = 12
-        };
-        
-        button_hello.clicked.connect (() => {
-            button_hello.label = "Hello World!";
-            button_hello.sensitive = false;
+
+        var grid = new Gtk.Grid ();
+        grid.orientation = Gtk.Orientation.VERTICAL;
+        grid.row_spacing = 6;
+
+        var button = new Gtk.Button.with_label (_("Click me!"));
+        var label = new Gtk.Label (null);
+
+        button.clicked.connect (() => {
+            label.label = _("Hello World!");
+            button.sensitive = false;
         });
 
-        main_window.add (button_hello);
+        grid.add (button);
+        grid.add (label);
+
+        main_window.add (grid);
         main_window.show_all ();
     }
 
