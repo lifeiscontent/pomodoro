@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.lifeiscontent.pomodoro\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-07 22:50-0800\n"
+"POT-Creation-Date: 2021-01-08 22:37-0800\n"
 "PO-Revision-Date: 2021-01-07 21:53-0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,14 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=ASCII\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: src/Application.vala:20
-msgid "Click me!"
-msgstr ""
-
-#: src/Application.vala:24
-msgid "Hello World!"
-msgstr ""
 
 #: data/com.github.lifeiscontent.pomodoro.appdata.xml.in:7
 #: data/com.github.lifeiscontent.pomodoro.desktop.in:3
