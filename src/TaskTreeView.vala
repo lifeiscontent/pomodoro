@@ -69,7 +69,7 @@ namespace Pomodoro {
             var toggle = (Gtk.CellRendererToggle) cell_renderer;
             Task task;
             model.get (iter, 0, out task);
-            toggle.active = (bool) task.done;
+            toggle.active = task.done;
         }
 
         void task_title_cell_data_func (

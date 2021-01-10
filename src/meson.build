@@ -8,6 +8,7 @@ executable(
     'Task.vala',
     'Store.vala',
     'TaskBox.vala',
+    'TaskStack.vala',
     dependencies: [
         dependency('gtk+-3.0'),
         dependency('gee-0.8')
