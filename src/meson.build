@@ -7,6 +7,7 @@ executable(
     'InMemoryStore.vala',
     'Task.vala',
     'Store.vala',
+    'TaskBox.vala',
     dependencies: [
         dependency('gtk+-3.0'),
         dependency('gee-0.8')

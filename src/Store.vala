@@ -4,6 +4,7 @@ namespace Pomodoro {
 
         public signal void task_added (Task task);
         public signal void task_removed (Task task);
+
         public abstract void add_task (Task to_add);
         public abstract void remove_task (Task to_remove);
 

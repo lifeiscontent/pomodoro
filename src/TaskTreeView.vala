@@ -1,5 +1,7 @@
 namespace Pomodoro {
     public class TaskTreeView : Gtk.TreeView {
+        public signal void task_changed (Pomodoro.Task task);
+
         public TaskTreeView () {
             Object (
                 headers_visible: false
@@ -45,6 +47,7 @@ namespace Pomodoro {
             if (!model.get_iter (out iter, tree_path)) return;
             model.get (iter, 0, out task);
             task.done = !task.done;
+            task_changed (task);
         }
 
         void update_task_name (string path, string new_text) {
@@ -54,6 +57,7 @@ namespace Pomodoro {
             if (!model.get_iter (out iter, tree_path)) return;
             model.get (iter, 0, out task);
             task.title = new_text;
+            task_changed (task);
         }
 
         void task_done_cell_data_func (
