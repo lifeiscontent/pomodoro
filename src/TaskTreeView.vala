@@ -2,8 +2,7 @@ namespace Pomodoro {
     public class TaskTreeView : Gtk.TreeView {
         public TaskTreeView () {
             Object (
-                headers_visible: false,
-                model: Pomodoro.tasks
+                headers_visible: false
             );
 
             var done_renderer = new Gtk.CellRendererToggle ();
@@ -29,11 +28,8 @@ namespace Pomodoro {
 
             var title_column = new Gtk.TreeViewColumn.with_attributes (
                 "Title",
-                 title_renderer,
-                 "text",
-                 TaskListStore.Column.TITLE,
-                 null
-            ) {
+                 title_renderer
+             ) {
                 expand = true
             };
 
@@ -41,32 +37,23 @@ namespace Pomodoro {
 
             insert_column (title_column, -1);
         }
-        public TaskTreeView.from_all_tasks () {
-            this ();
-        }
-
-        public TaskTreeView.from_active_tasks () {
-            this ();
-        }
-
-        public TaskTreeView.from_completed_tasks () {
-            this ();
-        }
 
         void toggle_task (string path) {
             Gtk.TreeIter iter;
-            bool done;
+            Task task;
             Gtk.TreePath tree_path = new Gtk.TreePath.from_string (path);
             if (!model.get_iter (out iter, tree_path)) return;
-            model.get (iter, TaskListStore.Column.DONE, out done);
-            Pomodoro.tasks.set (iter, TaskListStore.Column.DONE, !done);
+            model.get (iter, 0, out task);
+            task.done = !task.done;
         }
 
         void update_task_name (string path, string new_text) {
             Gtk.TreeIter iter;
             Gtk.TreePath tree_path = new Gtk.TreePath.from_string (path);
+            Task task;
             if (!model.get_iter (out iter, tree_path)) return;
-            Pomodoro.tasks.set (iter, TaskListStore.Column.TITLE, new_text);
+            model.get (iter, 0, out task);
+            task.title = new_text;
         }
 
         void task_done_cell_data_func (
@@ -76,9 +63,9 @@ namespace Pomodoro {
             Gtk.TreeIter iter
         ) {
             var toggle = (Gtk.CellRendererToggle) cell_renderer;
-            bool done;
-            model.get (iter, TaskListStore.Column.DONE, out done);
-            toggle.active = done;
+            Task task;
+            model.get (iter, 0, out task);
+            toggle.active = (bool) task.done;
         }
 
         void task_title_cell_data_func (
@@ -88,9 +75,9 @@ namespace Pomodoro {
             Gtk.TreeIter iter
         ) {
             var text = (Gtk.CellRendererText) cell_renderer;
-            string title;
-            model.get (iter, TaskListStore.Column.TITLE, out title);
-            text.text = title;
+            Task task;
+            model.get (iter, 0, out task);
+            text.text = task.title;
         }
     }
 }

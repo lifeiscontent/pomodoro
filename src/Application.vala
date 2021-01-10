@@ -1,5 +1,5 @@
 namespace Pomodoro {
-    public static Pomodoro.TaskListStore tasks;
+    public static Pomodoro.Store store;
     public class Application : Gtk.Application {
         internal Application () {
             Object (
@@ -9,24 +9,11 @@ namespace Pomodoro {
         }
 
         static construct {
-            tasks = new Pomodoro.TaskListStore ();
-            Gtk.TreeIter iter;
-            tasks.append (out iter);
-            tasks.set (
-                iter,
-                TaskListStore.Column.DONE,
-                false,
-                TaskListStore.Column.TITLE,
-                "Finish this"
-            );
-            tasks.append (out iter);
-            tasks.set (
-                iter,
-                TaskListStore.Column.DONE,
-                false,
-                TaskListStore.Column.TITLE,
-                "Be Productive"
-            );
+            store = new Pomodoro.InMemoryStore ();
+            var first_task = new Pomodoro.Task ("Finish this");
+            first_task.done = true;
+            store.add_task (first_task);
+            store.add_task (new Pomodoro.Task ("Be Productive"));
         }
 
         protected override void activate () {
